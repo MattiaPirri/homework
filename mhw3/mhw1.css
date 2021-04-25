@@ -1,0 +1,614 @@
+:root {
+    --num_preferiti: 6;
+}
+
+body {
+    margin: 0px;
+    text-align: center;
+}
+
+
+/*--------- LOGO ----------*/
+
+.logo {
+    font-family: 'Lato', Helvetica, sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    width: 100px;
+    text-align: center;
+    font-weight: 900;
+}
+
+.logo div {
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    font-size: .7em;
+    margin-top: -5px;
+    margin-right: -0.5em;
+}
+
+header {
+    height: 400px;
+    background-image: url("https://images.pexels.com/photos/6613707/pexels-photo-6613707.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*--------- OVERLAY ----------*/
+
+header::before {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    content: '';
+    height: 400px;
+}
+
+header nav {
+    font-family: 'Roboto Slab', serif;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-family: 'Lexend Deca', sans-serif;
+    color: white;
+    z-index: 1;
+}
+
+#hamburger {
+    margin-right: 20px;
+    display: none;
+}
+
+#hamburger div {
+    background-color: white;
+    height: 3px;
+    width: 25px;
+    margin: 5px;
+}
+
+#menu-contenuto {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 15px;
+}
+
+#menu span {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#menu a {
+    margin-left: 15px;
+}
+
+#destra {
+    display: flex;
+    width: 190px;
+    justify-content: space-between;
+}
+
+#destra a {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    margin-left: 0px;
+}
+
+#destra a span {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.7em;
+    color: white;
+    margin: 0;
+}
+
+#destra a .numero {
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    background-color: #1ed760;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 1.5;
+}
+
+#destra .img {
+    height: 50px;
+    width: 50px;
+}
+
+#utente .img {
+    background-image: url(img/utente-bianco.png);
+}
+
+#utente:hover .img {
+    background-image: url(img/utente-verde.png);
+}
+
+#desideri .img {
+    background-image: url(img/cuore-bianco.png);
+}
+
+#desideri:hover .img {
+    background-image: url(img/cuore-verde.png);
+}
+
+#carrello .img {
+    background-image: url(img/carrello-bianco.png);
+}
+
+#carrello:hover .img {
+    background-image: url(img/carrello-verde.png);
+}
+
+#menu a:hover,
+#menu a:hover span {
+    color: #1ed760;
+}
+
+#menu a:hover .numero {
+    background-color: white;
+}
+
+#categoria {
+    position: absolute;
+    padding-top: 10px;
+    left: -62.5px;
+    display: none;
+    width: 250px;
+}
+
+#categoria a {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#categoria a:hover {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#categorie {
+    position: relative;
+    display: inline;
+    z-index: 2;
+}
+
+#categorie:hover #categoria {
+    color: black;
+    display: block;
+}
+
+
+/*------- MENU' TENDINA PREFERITI -------*/
+
+#desideri:hover span {
+    color: #1ed760;
+}
+
+#desideri:hover .numero {
+    background-color: white;
+    border: 1px solid #1ed760;
+    color: #1ed760;
+}
+
+#hover-desideri {
+    position: absolute;
+    top: 69px;
+    right: 68px;
+    background-color: #fff;
+    display: none;
+    width: 300px;
+    border: 3px solid #1ed760;
+}
+
+#desideri:hover #hover-desideri {
+    display: block;
+}
+
+#desideri:hover a {
+    width: 74px;
+    background-color: white;
+    border: 3px solid #1ed760;
+    border-bottom: none;
+    padding: 0px 2px;
+    /*
+    Questo non va bene dal momento che i bordi sono come in foto:
+    http://html-tuts.com/wp-content/uploads/css-arrows-from-borders-explained.png
+    border-bottom-color: rgba(0, 0, 0, 0);
+    Ho risolto aggiuggendo un div (#bordo) della misura esatta per coprire il bordo
+    */
+}
+
+#bordo {
+    background-color: white;
+    height: 3px;
+    width: 78px;
+    position: absolute;
+    right: 0px;
+    top: -3px;
+}
+
+#preferiti-navbar .item {
+    margin: 0px 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+    position: relative;
+}
+
+#preferiti-navbar .item .immagine {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    margin: 5px;
+}
+
+#preferiti-navbar .item .btn-cuore {
+    position: absolute;
+    right: 0px;
+    height: 40px;
+    width: 40px;
+}
+
+#preferiti-navbar .item .btn-cuore:hover {
+    height: 50px;
+    width: 50px;
+}
+
+#preferiti-navbar .item .content {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    color: black;
+    text-align: left;
+}
+
+#preferiti-navbar .empty {
+    color: black;
+    margin-bottom: 10px;
+}
+
+#preferiti-navbar .empty img {
+    width: 100%;
+}
+
+
+/* ------------     ----------*/
+
+article {
+    margin: 0px 5%;
+}
+
+h2 {
+    font-family: "DM Sans", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+
+section {
+    color: black;
+    width: 100%;
+    display: flex;
+    align-content: space-between;
+}
+
+
+/*------- CATEGORIE ----------*/
+
+#cat .item {
+    flex-grow: 1;
+    flex-basis: 0;
+    margin: 1%;
+    background-color: #fff;
+    position: relative;
+}
+
+#cat .item img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+#cat .item:hover img,
+#cat .item:hover div {
+    height: 245px;
+    width: 98%;
+}
+
+#cat .item:hover div {
+    left: 1%;
+}
+
+#cat .item div {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 250px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+
+/*------ PREFERITI ---*/
+
+.preferiti {
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.preferiti .item {
+    margin: 1%;
+    width: calc(100%/var(--num_preferiti) - 2%);
+    font-family: 'Noto Sans JP', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.preferiti .item img {
+    height: 150px;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.preferiti .item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    display: none;
+}
+
+.preferiti .item:hover .overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preferiti .item .overlay img {
+    height: 50px;
+    width: 50px;
+}
+
+.preferiti .item .overlay img:hover {
+    height: 55px;
+    width: 55px;
+}
+
+
+/*------ ARTICOLI IN EVIDENZA -------*/
+
+#prodotti {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#prodotti .item {
+    margin: 1%;
+    width: calc(100%/3 - 2% - 10px);
+    font-family: 'Noto Sans JP', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 5px solid white;
+}
+
+#prodotti a {
+    color: black;
+}
+
+#prodotti .item img {
+    height: 250px;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.stelle {
+    color: #1ed760;
+}
+
+#prodotti .overlay {
+    margin-top: 10px;
+    height: 80px;
+    position: relative;
+}
+
+#prodotti .overlay img {
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+}
+
+.cuore {
+    position: absolute;
+    left: 10%;
+}
+
+.carrello {
+    position: absolute;
+    right: 10%;
+}
+
+#prodotti .item:hover div {
+    background-color: #1ed760;
+}
+
+#prodotti .item:hover {
+    border-color: #1ed760;
+    border-radius: 15px;
+}
+
+#prodotti .overlay img:hover {
+    width: 55px;
+    height: 55px;
+}
+
+.descrizione {
+    white-space: pre-line;
+}
+
+
+/*----   -------*/
+
+footer {
+    font-family: 'Manrope', sans-serif;
+    background-color: #1ed760;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+footer strong {
+    font-size: 1.5em;
+}
+
+#footer {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer .item {
+    margin: 1%;
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: left;
+}
+
+footer .logo {
+    margin-left: -20px;
+}
+
+footer .logo div {
+    text-align: center;
+    flex-grow: 2;
+}
+
+footer p {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1ab34f;
+    width: 100%;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+@media (max-width: 1900px) {
+     :root {
+        --num_preferiti: 5;
+    }
+}
+
+@media (max-width: 1024px) {
+     :root {
+        --num_preferiti: 4;
+    }
+}
+
+@media (max-width: 775px) {
+     :root {
+        --num_preferiti: 3;
+    }
+}
+
+@media (max-width: 620px) {
+    #hamburger {
+        display: block;
+    }
+    #menu {
+        display: none;
+    }
+    #footer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+     :root {
+        --num_preferiti: 2;
+    }
+    section,
+    #footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    #prodotti .item {
+        width: 100%;
+    }
+    .preferiti div {
+        width: calc(100%/var(--num_preferiti) - 2%);
+    }
+    .preferiti {
+        flex-direction: row;
+        align-content: center;
+    }
+    #footer .item {
+        text-align: center;
+    }
+    footer .logo {
+        margin-left: 0px;
+        width: 100%;
+    }
+}
+
+article .hidden,
+#prodotti .hidden,
+.hidden {
+    display: none;
+}
+
+.dettagli {
+    color: #777;
+    font-size: .8em;
+}
+
+#non-trovato {
+    height: 490px;
+}
