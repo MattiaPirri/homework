@@ -513,7 +513,7 @@ INSERT INTO CLIENTI (Email, Password, Nome, Cognome, Indirizzo, Telefono) VALUES
     ("ratti.amedeo@hotmail.it", "RaTT14m3de0*", "Amedeo", "Ratti", "Via Nazionale 12, Bari (BA)", "3417253963"),
     ("deborah_visconti@gmail.com", "VisC0nt1DeBoraH", "Deborah", "Visconti", "Corso Italia 23, Bologna (BO)", "3456132435"),
     ("novello.gabriel@tiscali.it", "PaSSwordG4bR13L!","Gabriel", "Novello", "Via Napoleone 124, Modena (MO)", "3489142532"),
-    ("mattia.pirri@gmail.coma", "$2y$10$6G/tW7LpHcB6OYvshc2/lejtdFd366F/c0b0vPEgm69lZhSSIYwwq", "Mattia", "Pirri", "Via Londa 111", "1234567890");
+    ("email@gmail.com", "$2y$10$uMstJCYyR63YnNTL2uhKbuJ46OeSpf99g3D0WOXhtLd3dL8Ya3HGC", "Mattia", "Pirri", "Via strada 12", "1234567890");
     
 INSERT INTO ORDINI(Data, IdCliente, Stato) VALUES 
 	("2020-12-22", 1, "Confermato"),
