@@ -1,0 +1,86 @@
+@import url("main.css");
+@import url("item-prodotto.css");
+:root {
+    --num_categories_per_row: 3;
+}
+
+article {
+    width: 100%;
+}
+
+
+/*=======CATEGORIE============*/
+
+#categories {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#categories .item {
+    width: calc(100%/var(--num_categories_per_row) - 2%);
+    margin: 1%;
+    background-color: #fff;
+    position: relative;
+}
+
+#categories .item img,
+#title-categoria img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+#categories .item:hover img,
+#categories .item:hover div {
+    height: 190px;
+    width: 98%;
+}
+
+#categories .item:hover div {
+    left: 1%;
+}
+
+#categories .item div,
+#title-categoria div {
+    font-size: 1.2em;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+#categories .descrizione,
+#title-categoria .descrizione {
+    font-size: 0.8em;
+    display: inline-block;
+    width: 80%;
+}
+
+
+/*INTESTAZIONE CATEGORIA*/
+
+#title-categoria {
+    margin: 1%;
+    position: relative;
+}
+
+@media (max-width: 1440px) {
+     :root {
+        --num_categories_per_row: 2;
+    }
+}
+
+@media (max-width: 870px) {
+     :root {
+        --num_categories_per_row: 1;
+    }
+}

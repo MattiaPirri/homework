@@ -1,0 +1,687 @@
+@import url("colors.css");
+* {
+    font-family: 'Lato', Helvetica, sans-serif;
+}
+
+body {
+    margin: 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/*--------- LOGO ----------*/
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    width: 100px;
+    text-align: center;
+    font-weight: 900;
+}
+
+.logo div {
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    font-size: .7em;
+    margin-top: -5px;
+    margin-right: -0.5em;
+}
+
+header {
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/*===================BARRA DI RICERCA===================*/
+
+.search {
+    display: flex;
+    position: absolute;
+    right: 430px;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s ease-in;
+}
+
+.termini-ricerca {
+    width: 100%;
+    border: 3px solid var(--main-color);
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+}
+
+.termini-ricerca::placeholder {
+    color: #fff;
+}
+
+
+/*
+        .termini-ricerca:focus {
+            color: var(--main-color);
+        }*/
+
+.search-button {
+    width: 40px;
+    height: 36px;
+    border: 1px solid var(--main-color);
+    background: var(--main-color);
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-button img {
+    height: 20px;
+}
+
+
+/*==============RISULTATI RICERCA==================*/
+
+.search-results {
+    z-index: 999;
+    position: absolute;
+    top: 36.5px;
+    background-color: #fff;
+    width: 300px;
+    max-height: 60vh;
+    overflow: scroll;
+    box-shadow: 0 5px 10px rgba(109, 109, 109, 0.2);
+}
+
+nav .search-results a.item {
+    color: black;
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: 0px;
+}
+
+.search-results .void {
+    color: black;
+}
+
+
+/*Il not mi serve per non mettere l'hover sul messaggio "Nessun risultato"*/
+
+.search-results .item:hover :not(.void) ::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.search-results .highlight {
+    margin: 0px;
+    background-color: var(--light-main-color);
+}
+
+
+/*====================MENU=========================*/
+
+#menu-contenuto {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 15px;
+}
+
+#menu span {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#menu a {
+    margin-left: 15px;
+}
+
+#destra {
+    display: flex;
+    width: 195px;
+    justify-content: space-between;
+}
+
+#destra a {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    margin-left: 0px;
+    padding: 0px 2px;
+}
+
+#destra a span {
+    font-size: 0.7em;
+    color: white;
+    margin: 0;
+}
+
+#destra a .numero {
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    background-color: var(--main-color);
+    border-radius: 17.5px;
+    /* width: 25px; */
+    min-width: 15px;
+    padding: 0px 5px;
+    width: fit-content;
+    height: 25px;
+    line-height: 1.5;
+}
+
+#destra .img {
+    height: 50px;
+    width: 50px;
+}
+
+#utente .img {
+    background-image: url(../img/utente-bianco.png);
+}
+
+#utente:hover .img,
+#hover-utente:hover+a .img {
+    background-image: url(../img/utente-verde.png);
+}
+
+#desideri .img {
+    background-image: url(../img/cuore-bianco.png);
+}
+
+#desideri:hover .img,
+#hover-desideri:hover+a .img {
+    background-image: url(../img/cuore-verde.png);
+}
+
+#carrello .img {
+    background-image: url(../img/carrello-bianco.png);
+}
+
+#carrello:hover .img,
+#hover-carrello:hover+a .img {
+    background-image: url(../img/carrello-verde.png);
+}
+
+#menu a:hover,
+#menu a:hover span {
+    color: var(--main-color);
+}
+
+#menu a:hover .numero {
+    background-color: white;
+}
+
+#categoria {
+    position: absolute;
+    padding-top: 10px;
+    left: -62.5px;
+    display: none;
+    width: 250px;
+}
+
+#categoria a {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#categoria a:hover {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#categorie {
+    position: relative;
+    display: inline;
+    z-index: 2;
+}
+
+#categorie:hover #categoria {
+    color: black;
+    display: block;
+}
+
+
+/*===========MENU TENDINA DESTRA==========*/
+
+.dropdown:hover span,
+#hover-desideri:hover+a span,
+#hover-utente:hover+a span,
+#hover-carrello:hover+a span {
+    color: var(--main-color);
+}
+
+.dropdown:hover .numero,
+#hover-desideri:hover+a .numero,
+#hover-utente:hover+a .numero,
+#hover-carrello:hover+a .numero {
+    background-color: white;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+}
+
+
+/*
+    .dropdown {
+        position: relative;
+    }*/
+
+#hover-utente,
+#hover-desideri,
+#hover-carrello {
+    position: absolute;
+    /*
+        top: 63px;
+        right: -3px;
+        */
+    top: 69px;
+    right: 12px;
+    width: 300px;
+    background-color: #fff;
+    border: 3px solid var(--main-color);
+    display: none;
+    z-index: 2;
+    /*
+    Le istruzioni a seguire servono per far si che il menù a tendina abbia un'altezza massima prefissata e dipendente dall'altezza dello schermo dell'utilizzatore, 
+    cosi che nel caso in cui i risultati non entrano tutti in altezza si possa scorrere senza scorrere l'intera pagina
+    */
+    max-height: 50vh;
+    overflow: scroll;
+    box-shadow: 0 5px 10px rgba(109, 109, 109, 0.2);
+}
+
+.dropdown:hover #hover-utente,
+.dropdown:hover #hover-desideri,
+.dropdown:hover #hover-carrello {
+    display: block;
+}
+
+.dropdown:hover a {
+    background-color: white;
+    /*
+    Questo non va bene dal momento che i bordi sono come in foto:
+    http://html-tuts.com/wp-content/uploads/css-arrows-from-borders-explained.png
+    border-bottom-color: rgba(0, 0, 0, 0);
+    Ho risolto aggiuggendo un div (#bordo) della misura esatta per coprire il bordo*/
+    /*Che poi ho sostituito con ::after*/
+    /*Con outline non mi sposta l'elemento*/
+    /* border: 3px solid var(--main-color);
+    border-bottom: none; */
+    outline: 3px solid var(--main-color);
+}
+
+.dropdown:hover>a::after {
+    content: "";
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    bottom: -3px;
+    z-index: 3;
+}
+
+.dropdown>div {
+    color: black;
+}
+
+#utente-navbar {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#hover-utente .logged {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#hover-utente a {
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 15px;
+    /*Elimino l'outline ereditato*/
+    outline: none;
+    border: 2px solid var(--main-color);
+    width: 80%;
+    margin: 5px;
+}
+
+#hover-utente a:hover {
+    background-color: white;
+    color: var(--main-color);
+}
+
+.dropdown .empty {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.dropdown .empty img {
+    margin-top: 5px;
+    width: 99%;
+}
+
+#preferiti-navbar a,
+#carrello-navbar a {
+    outline: none;
+    color: var(--main-color);
+    display: inline;
+}
+
+#preferiti-navbar a:hover,
+#carrello-navbar a:hover {
+    text-decoration: underline;
+}
+
+#preferiti-navbar .not-logged,
+#carrello-navbar .not-logged {
+    margin: 5px;
+}
+
+#preferiti-navbar .item,
+#carrello-navbar .item {
+    margin: 0px 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+    position: relative;
+}
+
+#preferiti-navbar .item:last-child,
+#carrello-navbar .item:last-child {
+    border-bottom: none;
+}
+
+#preferiti-navbar .item .immagine,
+#carrello-navbar .item .immagine {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    margin: 5px;
+}
+
+#preferiti-navbar .item .btn-cuore,
+#carrello-navbar .item .btn-carrello {
+    position: absolute;
+    right: 0px;
+    height: 40px;
+    width: 40px;
+}
+
+#preferiti-navbar .item .btn-cuore:hover,
+#carrello-navbar .item .btn-carrello:hover {
+    height: 50px;
+    width: 50px;
+}
+
+#preferiti-navbar .item .content,
+#carrello-navbar .item .content {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    color: black;
+    align-items: flex-start;
+    text-align: left;
+}
+
+
+/*----FOOTER-------*/
+
+footer {
+    margin-top: auto;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+footer strong {
+    font-size: 1.5em;
+}
+
+#footer {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer .item {
+    margin: 1%;
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: left;
+}
+
+footer .logo {
+    margin-left: -20px;
+}
+
+footer .logo div {
+    text-align: center;
+    flex-grow: 2;
+}
+
+footer p {
+    background-color: var(--darker-main-color);
+    width: 100%;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+
+/*=========MENU MOBILE=========*/
+
+#hamburger-wrapper {
+    position: relative;
+    display: none;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    z-index: 1000;
+}
+
+#hamburger-btn,
+#hamburger-btn::before,
+#hamburger-btn::after {
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all .5s ease-in-out;
+}
+
+#hamburger-btn::before {
+    content: '';
+    transform: translateY(-16px);
+}
+
+#hamburger-btn::after {
+    content: '';
+    transform: translateY(16px);
+}
+
+
+/* ANIMAZIONE */
+
+#hamburger-wrapper.open #hamburger-btn {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+#hamburger-wrapper.open #hamburger-btn::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+#hamburger-wrapper.open #hamburger-btn::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+#menu-mobile.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+#menu-mobile {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s ease-in;
+}
+
+#menu-mobile .logo {
+    margin-bottom: 30px;
+}
+
+a[id^="menu-mobile-"] {
+    color: var(--main-color);
+    margin-top: 5px;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+@media (max-width: 740px) {
+    #hamburger-wrapper {
+        display: flex;
+    }
+    #menu {
+        display: none;
+    }
+    .search {
+        right: 70px;
+    }
+    .search-results {
+        right: 0px;
+    }
+}
+
+@media(max-width: 375px) {
+    .search.nascosta {
+        visibility: hidden;
+        opacity: 0;
+    }
+    .search {
+        z-index: 1000;
+    }
+    .search-results {
+        right: -60px;
+    }
+}
+
+@media (max-width: 620px) {
+    #footer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    #footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    #prodotti .item {
+        width: 100%;
+    }
+    .preferiti div {
+        width: calc(100%/var(--num_preferiti) - 2%);
+    }
+    .preferiti {
+        flex-direction: row;
+        align-content: center;
+    }
+    #footer .item {
+        text-align: center;
+    }
+    footer .logo {
+        margin-left: 0px;
+        width: 100%;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+
+/*============LOADER==============*/
+
+div[id^="loader"] {
+    margin: 10px auto;
+    border: 10px solid var(--lighter-main-color);
+    border-top: 10px solid var(--main-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

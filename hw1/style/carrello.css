@@ -1,0 +1,94 @@
+@import url("main.css");
+body {
+    background-color: #eee;
+}
+
+#carrello-vuoto {
+    margin-top: 30px;
+    max-width: 80vw;
+    max-height: 40vh;
+}
+
+#prodotti {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    border-radius: 30px;
+}
+
+@media (max-width:740px) {
+    #prodotti {
+        width: 95%;
+    }
+}
+
+.prodotto {
+    padding: 5px 30px 0px 30px;
+    height: 80px;
+    border-bottom: 1px solid lightgrey;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width:550px) {
+    .prodotto {
+        flex-direction: column;
+        height: fit-content;
+        padding: 10px 0px;
+    }
+    .prodotto * {
+        margin-top: 10px;
+    }
+}
+
+.prodotto .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 150px;
+    color: black;
+}
+
+
+/*Per rimuovere il bordo all'ultimo elemento e arrotondare l'tutti i bordi*/
+
+#prodotti .prodotto:last-child {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+#prodotti .prodotto:last-child {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom: none;
+}
+
+.prodotto img {
+    height: 70px;
+    width: 100px;
+    object-fit: contain;
+}
+
+.prodotto .btn-carrello {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#completa {
+    background-color: var(--main-color);
+    border: 3px solid var(--main-color);
+    height: 30px;
+    border-radius: 15px;
+    color: white;
+    margin: 10px 0px;
+    font-weight: bold;
+}
+
+#completa:hover {
+    background-color: white;
+    color: var(--main-color);
+}

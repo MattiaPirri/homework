@@ -1,0 +1,161 @@
+@import url("colors.css");
+html {
+    font-family: 'Lato', Helvetica, sans-serif;
+    background-image: url('../img/a.svg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.title {
+    width: 100%;
+    background-color: var(--gray);
+    display: flex;
+    justify-content: center;
+    border-radius: 10px 10px 0px 0px;
+    padding: 20px 0px;
+}
+
+.title a {
+    text-decoration: none;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    width: 100px;
+    text-align: center;
+    font-weight: 900;
+}
+
+.logo div {
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    font-size: .7em;
+    margin-top: -5px;
+    margin-right: -0.5em;
+}
+
+h1 {
+    margin-bottom: 0px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 20px;
+}
+
+input[type=text],
+input[type=password] {
+    width: 240px;
+    margin-top: 20px;
+    border: none;
+    border-bottom: 2px solid lightslategray;
+    height: 30px;
+    transition: .3s border ease-in;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    outline: none;
+    border-bottom: 2px solid var(--azzurro);
+}
+
+
+/*Nel caso in cui il campo è corretto*/
+
+input.true {
+    border-bottom: 2px solid var(--main-color);
+}
+
+
+/*Nel caso di errore di validazione*/
+
+input.false {
+    border-bottom: 2px solid red;
+}
+
+input[type=text]::placeholder,
+input[type=password]::placeholder {
+    position: relative;
+    top: 5px;
+}
+
+input[type=text]:focus::placeholder,
+input[type=password]:focus::placeholder {
+    transition-duration: 0.2s;
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+#submit {
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    padding: 10px;
+    margin: 10px 0px;
+    border: 2px solid var(--main-color);
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: white;
+    color: var(--main-color);
+}
+
+#login {
+    color: lightslategray;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+#login a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+#login a:hover {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+.error {
+    font-size: 0.8em;
+    color: red;
+    display: block;
+    width: 240px;
+    text-align: center;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.hidden {
+    display: none;
+}

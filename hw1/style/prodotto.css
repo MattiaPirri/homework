@@ -1,0 +1,257 @@
+@import url("main.css");
+@import url("item-prodotto.css");
+body {
+    background-color: #eee;
+}
+
+article {
+    margin: 10px 0px;
+}
+
+article a {
+    color: var(--main-color);
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+#wrapper-prodotto {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#wrapper-prodotto>img {
+    padding: 15px 0px;
+    width: 48%;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: 30px 0px 0px 30px;
+    background-color: white;
+}
+
+#inner-prodotto {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--lighter-main-color);
+    border-radius: 0px 30px 30px 0px;
+}
+
+.stelle {
+    color: var(--main-color);
+}
+
+#leave-review {
+    cursor: pointer;
+    color: var(--main-color);
+}
+
+#leave-review:hover {
+    text-decoration: underline;
+}
+
+.descrizione {
+    display: inline-block;
+    margin-top: 20px;
+    max-width: 300px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttons {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 80%;
+    height: 80px;
+    background-color: var(--main-color);
+    position: relative;
+    border-radius: 40px;
+    margin-bottom: 30px;
+}
+
+.cuore,
+.carrello {
+    background-color: var(--main-color);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 15px;
+}
+
+.buttons img:hover {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    top: 10px;
+}
+
+
+/*==========MOBILE================*/
+
+@media (max-width: 550px) {
+    #wrapper-prodotto {
+        flex-direction: column;
+        width: 95%;
+    }
+    #wrapper-prodotto>img {
+        /* padding: 15px 0px; */
+        width: 100%;
+        max-height: 40vh;
+        border-radius: 30px 30px 0px 0px;
+        background-color: white;
+    }
+    #inner-prodotto {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--lighter-main-color);
+        border-radius: 0px 0px 30px 30px;
+    }
+}
+
+
+/*==========MODALE AGIGUNGI RECENSIONE*/
+
+#modal-view-leave-review {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-view-leave-review.hidden {
+    display: none;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+#modal-view-leave-review .modal-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    padding-top: 0px;
+}
+
+#clickable {
+    display: flex;
+    flex-direction: column;
+}
+
+#clickable * {
+    margin-bottom: 5px;
+}
+
+#modal-view-leave-review .modal-content a {
+    color: var(--main-color);
+}
+
+#modal-view-leave-review .modal-content a:hover {
+    text-decoration: underline;
+}
+
+#scelta-stelle {
+    margin: 0px auto;
+    display: flex;
+    position: relative;
+    flex-direction: row-reverse;
+}
+
+#scelta-stelle input {
+    display: none;
+}
+
+#scelta-stelle label {
+    display: block;
+    cursor: pointer;
+    width: 20px;
+    margin: 3px;
+}
+
+#scelta-stelle label::before {
+    content: '\f005';
+    font-family: 'Font Awesome 5 Free';
+    position: relative;
+    display: block;
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--lighter-main-color);
+}
+
+#scelta-stelle label::after {
+    content: '\f005';
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    display: block;
+    color: var(--main-color);
+    top: 0;
+    opacity: 0;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+
+/*
+#scelta-stelle input:checked~label::after {
+    margin-top: 3px;
+}
+
+*/
+
+#scelta-stelle label:hover::after,
+#scelta-stelle label:hover~label::after,
+#scelta-stelle input:checked~label::after {
+    opacity: 1;
+}
+
+textarea,
+#modal-view-leave-review .modal-content input[type="text"] {
+    resize: none;
+    outline: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+/*
+input[type="text"] {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--main-color);
+}
+*/
+
+#modal-view-leave-review .modal-content button {
+    margin-top: 10px;
+    background-color: var(--main-color);
+    border-radius: 15px;
+    height: 24px;
+    color: white;
+    border: 3px solid var(--main-color);
+}
+
+#modal-view-leave-review .modal-content button:hover {
+    color: var(--main-color);
+    background-color: #fff;
+}

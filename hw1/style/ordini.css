@@ -1,0 +1,91 @@
+@import url("main.css");
+body {
+    background-color: #eee;
+}
+
+#ordini-vuoto {
+    margin-top: 30px;
+    max-width: 80vw;
+    max-height: 40vh;
+}
+
+#orders {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+@media (max-width:550px) {
+    #orders {
+        width: 95%;
+    }
+}
+
+#orders .item {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid lightgray;
+    height: 50px;
+    padding: 0px 40px;
+}
+
+#orders div {
+    overflow: scroll;
+}
+
+@media (max-width:550px) {
+    #orders .item {
+        padding: 0px 10px;
+    }
+}
+
+#orders .item a {
+    cursor: pointer;
+    color: var(--main-color);
+}
+
+#orders .item:first-child {
+    border-top: none;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+#orders .item:last-child {
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+
+/*l'ultimo elemento diventa il penultimo e modifico il "fratello" subito adiacente*/
+
+#orders .item:nth-last-child(2)+div {
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.contenuto {
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    width: 100%;
+    min-width: 700px;
+    background-color: #fff;
+    padding: 0px 10px;
+}
+
+table tbody {
+    cursor: pointer;
+}
+
+table tbody tr:hover {
+    color: var(--main-color);
+}
+
+table tfoot {
+    font-weight: bold;
+}

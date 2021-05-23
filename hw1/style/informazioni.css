@@ -1,0 +1,9 @@
+@import url("main.css");
+article {
+    text-align: start;
+    margin: 10px 30px;
+}
+
+h1 {
+    color: var(--main-color);
+}

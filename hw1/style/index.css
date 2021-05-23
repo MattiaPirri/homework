@@ -1,0 +1,137 @@
+@import url("main.css");
+@import url("item-prodotto.css");
+ :root {
+    --num_categories_per_row: 5;
+}
+
+header {
+    height: 400px;
+    background-image: url("https://images.pexels.com/photos/6613707/pexels-photo-6613707.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    background-position: center;
+}
+
+
+/*--------- OVERLAY ----------*/
+
+header::before {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    content: '';
+    height: 400px;
+}
+
+header h1 {
+    color: white;
+    z-index: 1;
+}
+
+article {
+    margin: 0px 5%;
+}
+
+h2 {
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+
+section {
+    color: black;
+    width: 100%;
+    display: flex;
+    align-content: space-between;
+}
+
+
+/*------- CATEGORIE ----------*/
+
+#cat {
+    flex-wrap: wrap;
+}
+
+#cat .item {
+    width: calc(100%/var(--num_categories_per_row) - 2%);
+    margin: 1%;
+    background-color: #fff;
+    position: relative;
+}
+
+#cat .item img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+#cat .item:hover img,
+#cat .item:hover div {
+    height: 190px;
+    width: 98%;
+}
+
+#cat .item:hover div {
+    left: 1%;
+}
+
+#cat .item div {
+    font-size: 1.2em;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+@media (max-width: 1400px) {
+     :root {
+        --num_categories_per_row: 4;
+    }
+}
+
+@media (max-width: 775px) {
+     :root {
+        --num_categories_per_row: 3;
+    }
+}
+
+@media (max-width: 550px) {
+     :root {
+        --num_categories_per_row: 2;
+    }
+    section,
+    #prodotti .item {
+        width: 100%;
+    }
+}
+
+article .hidden,
+#prodotti .hidden,
+.hidden {
+    display: none;
+}
+
+
+/*========RICERCA EVIDENZA=========*/
+
+#non-trovato {
+    height: 490px;
+}
+
+#input-evidenza {
+    border: 3px solid var(--main-color);
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    outline: none;
+}
